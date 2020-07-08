@@ -1,0 +1,11 @@
+Functionalities which we are going to use in Unit 3 Experiment:
+
+1 . Selection of language - dropdown button can be used.
+2. Taking sentences from cortus and split it as individual word buttons.
+3. if we click a single word then it should display below and hide in button row.
+4. If we click reform the sentence we can use one more function.
+5. if we want to check the answer we use function either it is correct or wrong.
+6. if the answer is wrong, to see the correct answers we use one more funtion
+7. And after seeing the correct answers, if u want to hide, we use one more
+8. If we u want to change the language of forming sentences to go back to dashboard we use one more back button function.
+9. As of know these are the main functions which we were used in this experiment if we want to add we can insert.
