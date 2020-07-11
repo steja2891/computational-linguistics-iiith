@@ -29,4 +29,25 @@ function Language(lang)
 		return;
 	}
 	document.getElementById("Instructions").style.display="";
+	document.getElementById("btnsHolder").innerHTML = "";
+	if(lang=="English"){
+		var sentencesList = englishSentences;
+	}
+	else{
+		var sentencesList = hindiSentences;
+	}
+	var noOfSenetences = sentencesList.length;
+	displaySen = sentencesList[Math.floor(Math.random() * (noOfSenetences-1))];
+	words = displaySen[0].split(' ').sort(() => Math.random() - 0.5);
+	var btnsHolder = document.getElementById("btnsHolder");
+	for(var i=0; i<words.length; i++){
+		var wordbutton = document.createElement("button");
+		wordbutton.innerText = words[i];
+		wordbutton.setAttribute("class","wordbutton");
+		btnsHolder.appendChild(wordbutton);
+	}
+	for(var i=0; i<words.length; i++){
+		var wordbutton = document.getElementsByClassName('wordbutton')[i];
+		wordbutton.addEventListener("click",addWordToSentence);
+	}
 }

@@ -84,3 +84,9 @@ body
   font-weight:lighter !important;
   margin-bottom: 50px;
 }
+
+button, #rightorwrong
+{
+  margin: 10px;
+  font-size: 15px;
+}
