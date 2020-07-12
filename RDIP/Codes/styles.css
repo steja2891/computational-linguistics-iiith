@@ -89,4 +89,10 @@ button, #rightorwrong
 {
   margin: 10px;
   font-size: 15px;
+  box-shadow: 1px 1px grey; 
+}
+
+#userSenetence, #rightorwrong
+{
+  font-size: 15px;
 }

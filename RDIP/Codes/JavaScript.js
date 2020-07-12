@@ -30,13 +30,16 @@ function Language(lang)
 	}
 	document.getElementById("Instructions").style.display="";
 	document.getElementById("btnsHolder").innerHTML = "";
+	document.getElementById("reform").style.display="none";
+	document.getElementById("userSentence").style.display="none";
+	document.getElementById("userSentence").innerHTML = "";
 	if(lang=="English"){
 		var sentencesList = englishSentences;
 	}
 	else{
 		var sentencesList = hindiSentences;
 	}
-	var noOfSenetences = sentencesList.length;
+		var noOfSenetences = sentencesList.length;
 	displaySen = sentencesList[Math.floor(Math.random() * (noOfSenetences-1))];
 	words = displaySen[0].split(' ').sort(() => Math.random() - 0.5);
 	var btnsHolder = document.getElementById("btnsHolder");
@@ -49,5 +52,18 @@ function Language(lang)
 	for(var i=0; i<words.length; i++){
 		var wordbutton = document.getElementsByClassName('wordbutton')[i];
 		wordbutton.addEventListener("click",addWordToSentence);
+	}
+}
+
+function addWordToSentence(event){
+	document.getElementById("Instructions2").style.display = "";
+	document.getElementById("reform").style.display = "";
+	document.getElementById("userSentence").style.display="";
+	var clickedWord = event.target.innerText;
+	event.target.parentNode.removeChild(event.target);
+	var userSentence = document.getElementById("userSentence");
+	userSentence.innerHTML += clickedWord+" ";
+	if(document.getElementById("btnsHolder").childElementCount == 0){
+		document.getElementById("check").style.display="";
 	}
 }
