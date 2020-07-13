@@ -67,3 +67,22 @@ function addWordToSentence(event){
 		document.getElementById("check").style.display="";
 	}
 }
+
+function reform(){
+	document.getElementById("Instructions2").style.display = "none";
+	document.getElementById("userSentence").innerHTML = "";
+	document.getElementById("btnsHolder").innerHTML = "";
+	document.getElementById("reform").style.display = "none";
+	
+	for(var i=0; i<words.length; i++){
+		var wordbutton = document.createElement("button");
+		wordbutton.innerText = words[i];
+		wordbutton.setAttribute("class","wordbutton");
+		btnsHolder.appendChild(wordbutton);
+	}
+	for(var i=0; i<words.length; i++){
+		var wordbutton = document.getElementsByClassName('wordbutton')[i];
+		wordbutton.addEventListener("click",addWordToSentence);
+	}
+
+}
