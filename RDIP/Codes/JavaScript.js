@@ -33,6 +33,8 @@ function Language(lang)
 	document.getElementById("reform").style.display="none";
 	document.getElementById("userSentence").style.display="none";
 	document.getElementById("userSentence").innerHTML = "";
+	document.getElementById("check").style.display="none";
+	document.getElementById("Instructions2").style.display = "none";
 	if(lang=="English"){
 		var sentencesList = englishSentences;
 	}
@@ -73,7 +75,7 @@ function reform(){
 	document.getElementById("userSentence").innerHTML = "";
 	document.getElementById("btnsHolder").innerHTML = "";
 	document.getElementById("reform").style.display = "none";
-	
+	document.getElementById("check").style.display="none";
 	for(var i=0; i<words.length; i++){
 		var wordbutton = document.createElement("button");
 		wordbutton.innerText = words[i];
