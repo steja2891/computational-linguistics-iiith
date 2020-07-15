@@ -35,6 +35,7 @@ function Language(lang)
 	document.getElementById("userSentence").innerHTML = "";
 	document.getElementById("check").style.display="none";
 	document.getElementById("Instructions2").style.display = "none";
+	document.getElementById("rightorwrong").innerHTML = "";
 	if(lang=="English"){
 		var sentencesList = englishSentences;
 	}
@@ -76,6 +77,7 @@ function reform(){
 	document.getElementById("btnsHolder").innerHTML = "";
 	document.getElementById("reform").style.display = "none";
 	document.getElementById("check").style.display="none";
+	document.getElementById("rightorwrong").style.display="none";
 	for(var i=0; i<words.length; i++){
 		var wordbutton = document.createElement("button");
 		wordbutton.innerText = words[i];
@@ -87,4 +89,20 @@ function reform(){
 		wordbutton.addEventListener("click",addWordToSentence);
 	}
 
+}
+
+function check(){
+	var rightorwrong = document.getElementById("rightorwrong");
+	var finalSentence = document.getElementById("userSentence").innerText.trim();
+	for(var i=0; i<displaySen.length; i++){
+		if(finalSentence == displaySen[i].trim()){
+			rightorwrong.style.color = "green";
+			rightorwrong.style.display = "";
+			rightorwrong.innerHTML = "Right answer!!!";
+			return;
+		}
+	}
+	rightorwrong.style.color = "red";
+	rightorwrong.innerHTML = "Wrong answer!!!";
+	rightorwrong.style.display = "";
 }
