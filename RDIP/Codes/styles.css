@@ -96,3 +96,9 @@ button, #rightorwrong
 {
   font-size: 30px;
 }
+
+ul
+{
+  font-size: 20px;
+  padding: 20px 0 0 0;
+}

@@ -38,6 +38,7 @@ function Language(lang)
 	document.getElementById("rightorwrong").innerHTML = "";
 	document.getElementById("getanswers").innerText = "Get Correct Sentence";
 	document.getElementById("getanswers").style.display = "none";
+	document.getElementById("correctanswers").innerHTML = "";
 	if(lang=="English"){
 		var sentencesList = englishSentences;
 	}
@@ -82,6 +83,7 @@ function reform(){
 	document.getElementById("rightorwrong").style.display="none";
 	document.getElementById("getanswers").innerText = "Get Correct Sentence";
 	document.getElementById("getanswers").style.display = "none";
+	document.getElementById("correctanswers").innerHTML = "";
 	for(var i=0; i<words.length; i++){
 		var wordbutton = document.createElement("button");
 		wordbutton.innerText = words[i];
@@ -98,7 +100,7 @@ function reform(){
 function check(){
 	var rightorwrong = document.getElementById("rightorwrong");
 	var finalSentence = document.getElementById("userSentence").innerText.trim();
-	
+	document.getElementById("correctanswers").innerHTML = "";
 	for(var i=0; i<displaySen.length; i++){
 		if(finalSentence == displaySen[i].trim()){
 			rightorwrong.style.color = "green";
@@ -114,3 +116,20 @@ function check(){
 	document.getElementById("getanswers").style.display = "";
 }
 
+function getanswers(action){
+	var correctanswers = document.getElementById("correctanswers");
+	if(action=="Get Correct Sentence" || action=="Get Answers"){
+		document.getElementById("getanswers").innerText = "Hide the correct Sentence";
+		correctanswers.innerHTML = "";
+		var len = displaySen.length;
+		for(var i=0;i<len;i++){
+			var line = document.createElement("li");
+			line.innerHTML = displaySen[i]+"<br>";
+			correctanswers.appendChild(line);
+		}
+	}
+	else{
+		document.getElementById("getanswers").innerText = "Get Answers";
+		correctanswers.innerHTML="";
+	}
+}
